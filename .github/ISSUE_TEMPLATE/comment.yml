@@ -1,4 +1,4 @@
-name: Actions
+name: AutoResponder
 # This workflow is triggered when a label is added to an issue.
 on:
   issues:
