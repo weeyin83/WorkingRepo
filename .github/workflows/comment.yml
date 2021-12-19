@@ -13,6 +13,6 @@ jobs:
       - name: Process Label Action
         uses: hramos/label-actions@v1
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.RESPONDER_TOKEN }}
           comment: | 
             This issue will be closed and locked because reasons.
