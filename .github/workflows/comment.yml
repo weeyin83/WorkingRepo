@@ -1,63 +1,23 @@
-name: 'Label Actions'
-
 on:
+  fork:
+  push:
+    branches: [main]
   issues:
-    types: [labeled]
-
-permissions:
-  contents: read
-  issues: write
-  pull-requests: write
-  discussions: write
+    types: [opened]
+  issue_comment:
+    types: [created]
+  pull_request_target:
+    types: [opened]
+  pull_request_review_comment:
+    types: [created]
 
 jobs:
-  action:
+  welcome:
     runs-on: ubuntu-latest
     steps:
-      - uses: dessant/label-actions@v2
+      - uses: actions/checkout@v1
+      - uses: EddieHubCommunity/gh-action-community/src/welcome@main
         with:
-          github-token: ${{ secrets.RESPONDER_TOKEN }}
-          process-only: ''
-
-# Configuration for Label Actions - https://github.com/dessant/label-actions
-
-
-# The `feature` label is added to issues
-feature:
-  issues:
-    # Post a comment, `{issue-author}` is an optional placeholder
-    comment: >
-      :wave: @{issue-author}, please use our idea board to request new features.
-    # Close the issue
-    close: true
-
-# The `wip` label is added to pull requests
-wip:
-  prs:
-    # Add labels
-    label:
-      - 'on hold'
-      - 'needs feedback'
-
-# The `wip` label is removed from pull requests
--wip:
-  prs:
-    # Add label
-    label: 'needs QA'
-    # Remove labels
-    unlabel:
-      - 'on hold'
-      - 'needs feedback'
-
-# The `solved` label is added to discussions
-solved:
-  discussions:
-    # Lock the discussion
-    lock: true
-
-# The `pizzazz` label is added to issues, pull requests or discussions
-pizzazz:
-  # Post comments
-  comment:
-    - '![](https://i.imgur.com/WuduJNk.jpg)'
-    - '![](https://i.imgur.com/1D8yxOo.gif)'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: "<h1>It's great having you contribute to this project</h1> Welcome to the community :nerd_face:"
+          pr-message: "<h1>It's great having you contribute to this project</h1> Welcome to the community :nerd_face:"
