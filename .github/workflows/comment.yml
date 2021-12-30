@@ -21,3 +21,4 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           issue-message: "<h1>It's great having you contribute to this project</h1> Welcome to the community :nerd_face:"
           pr-message: "<h1>It's great having you contribute to this project</h1> Welcome to the community :nerd_face:"
+          footer: "We will be in touch soon. "
