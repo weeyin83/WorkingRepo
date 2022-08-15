@@ -9,4 +9,4 @@ Used for showing Git and GitHub features.
 </picture>
 
 
-<p class="callout warning">You may have to reboot your Gateway server before you can validate the install of Windows Admin Center has correctly worked. </p>
+> ⚠️ You may have to reboot your Gateway server before you can validate the install of Windows Admin Center has correctly worked. 
