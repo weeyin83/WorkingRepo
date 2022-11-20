@@ -21,10 +21,11 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  say-hello-workflow: 
   tagged-build:
     jobs:
-      - say-hello
+      - say-hello:
           filters:
               tags:
                only: /^v.*/
+
+# VS Code Extension Version: 1.1.1
